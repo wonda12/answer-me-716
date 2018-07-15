@@ -63,8 +63,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  #ストロングパラメーター
+  #フォームから送信されたデータをparamsメソッドで取得
   def post_params
     params.require(:post).permit(:content, :picture, :kind)
+    # params.require(:モデル名).permit(:キー１, キー２)
+    #モデル名のキー１、モデル名のキー２という風に取得する
   end
 
   # ⑨メソッド追加（画像生成）

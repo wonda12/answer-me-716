@@ -1,5 +1,8 @@
 <h2>Step 1</h2>
 
+
+<!-- model:postの解説 -->
+<!-- post = @post、　またpostがnilのときはcreateアクションに、そうでないときはeditアクションに勝手に推測して飛ばす -->
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +14,7 @@
       </ul>
     </div>
   <% end %>
+
 
   <div class="form-group">
     <p>背景画像選択</p>
