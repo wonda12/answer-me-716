@@ -126,6 +126,7 @@ class PostsController < ApplicationController
       base = "app/assets/images/red.jpg"
     end
     # ⑨-11 minimagickを使って選択した画像を開き、作成した文字を指定した条件通りに挿入している
+    # 参照　http://keruuweb.com/rails-minimagick%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/
     image = MiniMagick::Image.open(base)
     image.combine_options do |i|
       i.font font
