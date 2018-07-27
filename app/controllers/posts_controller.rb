@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     render :new
   end
 
+  def answer
+    @post_id = params[:id]
+  end
+
   # ④インスタンス生成はbefore_action :new_postに集約
   def new
   end
