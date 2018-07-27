@@ -12,8 +12,25 @@ class PostsController < ApplicationController
     render :new
   end
 
+  #追加したメソッド
   def answer
     @post_id = params[:id]
+    if Comment.find_by(postid: @post_id) != nil
+      @comments = Comment.where(postid: @post_id)
+      @user = Comment.find_by(postid: @post_id).user
+      @answer = Comment.find_by(postid: @post_id).answer
+
+    end
+
+  end
+
+  #追加したメソッド
+  def comment
+  # @comment = Comment.new(comment: params[:comment], post_id: params[:post_id], user_id: params[:user_id])
+    @comment = Comment.new(user: params[:user], answer: params[:answer], postid: params[:post_id])
+    @comment.save
+    redirect_to answer_path(@comment.postid)
+
   end
 
   # ④インスタンス生成はbefore_action :new_postに集約

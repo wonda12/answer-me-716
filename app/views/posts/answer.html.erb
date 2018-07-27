@@ -2,4 +2,43 @@
 <p>渡された@post_idの値:<%= @post_id %></p>
 <div class="container">
   <img class="col-md-12 img-fluid" src= "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/<%= @post_id %>.png" alt="">
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_tag("/posts/comment") do %>
+      <form>
+        <div class="form-group">
+          <label for="user">ユーザー名</label>
+          <input name="user" class="form-control">
+          <label for="answer">あなたの答え</label>
+          <textarea name="answer" class="form-control"></textarea>
+          <!-- <input name="post_id" type="hidden" > -->
+          <textarea name="post_id" class="hidden" style="display:none"><%= @post_id %></textarea>
+
+        </div><!--form-group-->
+        <button type="submit" class="btn btn-primary">答える</button>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 p-5">
+    <h1 class="text-center text-primary">みんなの答え</h1>
+    <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>ユーザー</th>
+              <th>答え</th>
+          </tr>
+      </thead>
+
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+              <th><%= comment.user %></th>
+              <td><%= comment.answer %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table><br>
+  </div>
+  </div>
 </div>
