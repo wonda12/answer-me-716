@@ -18,7 +18,7 @@ module ApplicationHelper
     end
     twitter_card[:title] = "Answer.me"
     twitter_card[:card] = 'summary_large_image'
-    twitter_card[:description] = '質問に答えてみましょう！'
+    twitter_card[:description] = 'クリックして質問に答えてみましょう！'
     twitter_card
   end
 end
