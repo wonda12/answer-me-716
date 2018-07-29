@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     # ③-1 投稿idをセット（idの有無をTwitterに表示させる画像を決める条件分岐に使用するため）
     @post.id = params[:id]
     # ③-2 showアクションが呼ばれた場合、new.html.erbを呼び出す
-    render :new
+    render :answer
   end
 
   #追加したメソッド
