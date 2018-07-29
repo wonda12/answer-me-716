@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- 追記③ Twitterカード設定 -->
+    <!-- if @postがtrueなら@postをelseならnilを入れる　↓ -->
     <% twitter_card = get_twitter_card_info(@post ? @post : nil) %>
     <meta name="twitter:card" content=<%=twitter_card[:card]%> />
     <meta property="og:url" content=<%=twitter_card[:url]%> />
