@@ -43,18 +43,18 @@
       </div>
       <div class="answers">
         <% def comment %>
-              <% if @comments != nil %>
+               <% if @comments != nil %>
                 <% @comments.each do |comment| %>
-                          <div class="balloon5">
-                            <div class="faceicon">
-                             <%= comment.user %>
-                            </div>
-                            <div class="chatting">
-                              <div class="says">
-                                <p><%= comment.answer %></p>
-                              </div>
-                            </div>
-                          </div>
+                  <div class="balloon5">
+                    <div class="faceicon">
+                     <%= comment.user %>
+                    </div>
+                      <div class="chatting">
+                        <div class="says">
+                          <p><%= comment.answer %></p>
+                        </div>
+                      </div>
+                    </div>
                   <% end %>
                 <% else %>
                 <h3>まだコメントがありません</h3>

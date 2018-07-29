@@ -12,8 +12,8 @@ class PostsController < ApplicationController
       # ③-2 showアクションが呼ばれた場合、new.html.erbを呼び出す
       session[:received_form] = @post.id
       # redirect_to answer_path(@post.id)
+      @comments = Comment.where(postid: @post.id)
       render :answer
-
   end
 
   #追加したメソッド
