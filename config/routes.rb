@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   #コメントフォームを送るメソッド
   post "posts/comment" => "posts#comment"
 
+  post "posts/show" => "posts#show"
+
 
   #答える人のための画面
   get "/answer/:id", to:"posts#answer", as: :answer

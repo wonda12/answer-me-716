@@ -9,14 +9,11 @@ class PostsController < ApplicationController
   def show
     # ③-1 投稿idをセット（idの有無をTwitterに表示させる画像を決める条件分岐に使用するため）
     @post.id = params[:id]
-    if @post.id.present?
       # ③-2 showアクションが呼ばれた場合、new.html.erbを呼び出す
       session[:received_form] = @post.id
-      redirect_to answer_path(@post.id)
-      # render :answer
-    else
-      render :new
-    end
+      # redirect_to answer_path(@post.id)
+      render :answer
+
   end
 
   #追加したメソッド
@@ -35,12 +32,11 @@ class PostsController < ApplicationController
   #追加したメソッド
   def comment
   # @comment = Comment.new(comment: params[:comment], post_id: params[:post_id], user_id: params[:user_id])
-    @post_id = session[:received_form]
-    @comment = Comment.new(user: params[:user], answer: params[:answer], postid: @post_id)
+    post_id = session[:received_form]
+    @comment = Comment.new(user: params[:user], answer: params[:answer], postid: post_id)
     # @comment = Comment.new(user: params[:user], answer: params[:answer], postid: params[:post_id])
     @comment.save
     redirect_to answer_path(@comment.postid)
-
   end
 
   # ④インスタンス生成はbefore_action :new_postに集約

@@ -6,7 +6,12 @@
   <p>渡された@post_idの値:<%= @post_id %></p>
 </div>
 
-  <img class="answer_img" src= "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/<%= @post_id %>.png" alt="">
+  <% if @comment.present? %>
+    <img class="answer_img" src= "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/<%= @comment.postid %>.png" alt="">
+  <% else %>
+    <img class="answer_img" src= "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/<%= params[:id] %>.png" alt="">
+  <% end %>
+
   <div class="row">
     <div class="col-md-12">
       <%= form_tag("/posts/comment") do %>
