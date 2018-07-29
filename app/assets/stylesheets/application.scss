@@ -6,6 +6,15 @@ $usupink: hsla(334, 72%, 71%, 0.63);
 $blue: hsl(190, 74%, 60%);
 $gray: rgb(237, 238, 238);
 
+@media screen and (min-width: 800px) {
+   /* 表示領域が800px以上の場合に適用するスタイル */
+   .feature ol{
+     display: flex;
+     flex-direction: column;
+     margin: auto;
+     max-width: 75%;
+   }
+}
 
 body {
   text-align: center;
@@ -41,19 +50,25 @@ header{
   h1{
     color:white;
     background-color: $usupink;
+    max-width: 100%;
   }
   ol{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
     color:gray;
     list-style: none;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 100px;
   }
   li{
     border: 2px $blue solid;
+    border-radius: 2%;
     padding: 100px;
+    margin-bottom: 5px;
   }
 }
 
@@ -68,6 +83,7 @@ header{
   .img{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     padding-top: 100px;
