@@ -1,23 +1,31 @@
-<!--　▼ ジャンボトロン　 -->
-<div class="container">
-  <div class="jumbotron mt-4">
-    <h1 class="display-4　text-primary">Answer.me</h1>
-    <p class="lead">質問しよう！答えよう！</p>
-    <hr class="my-4">
-  </div><!-- /.jumbotron -->
-  ...
-</div><!-- /.container -->
-<!--　▲ ジャンボトロン　 -->
+<header>
+  <div class="logo"><%= image_tag "logo.png", :class => "logo_img" %></div>
+</header>
 
-<div class="container my-5">
-  <h2>簡単3StepでTwitter投稿！</h2>
-</div>
+<!-- キービジュアル -->
+<%= image_tag "key_visual.jpg", :class => "cover" %>
+
+  <div class="feature">
+    <h1>Answer.meの特徴</h1>
+    <ol>
+      <li>
+        <p>質問を投稿する</p>
+        <p>画像</p>
+      </li>
+      <li>
+        <p>回答をする</p>
+        <p>画像</p>
+      </li>
+      <li>
+        <p>回答を見る</p>
+        <p>画像</p>
+      </li>
+    </ol>
+  </div>
+
+
 
 <!-- 部分テンプレート -->
 <%= render 'form', post: @post %>
  <!-- render 部分テンプレート名, キー１:値１
  アクション内で定義した@post変数に、form部分テンプレート内でpost変数でアクセスできる -->
-
- <!-- <div>
-   <%= image_tag 'top.png', width: '315' %>
- </div> -->

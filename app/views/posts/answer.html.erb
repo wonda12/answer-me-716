@@ -1,52 +1,63 @@
-<h1>答える画面</h1>
-<p>渡された@post_idの値:<%= @post_id %></p>
-<div class="container">
-  <img class="col-md-12 img-fluid" src= "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/<%= @post_id %>.png" alt="">
+<header>
+  <div class="logo"><%= image_tag "logo.png", :class => "logo_img" %></div>
+</header>
+<div class="step3">
+  <h1>答える画面</h1>
+  <p>渡された@post_idの値:<%= @post_id %></p>
+</div>
+
+  <img class="answer_img" src= "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/<%= @post_id %>.png" alt="">
   <div class="row">
     <div class="col-md-12">
       <%= form_tag("/posts/comment") do %>
       <form>
         <div class="form-group">
-          <label for="user">ユーザー名</label>
-          <input name="user" class="form-control">
-          <label for="answer">あなたの答え</label>
-          <textarea name="answer" class="form-control"></textarea>
-          <!-- <input name="post_id" type="hidden" > -->
-          <textarea name="post_id" class="hidden" style="display:none"><%= @post_id %></textarea>
+          <div class="item1">
+            <label for="user">ユーザー名</label>
+            <input name="user" class="form-control">
+          </div>
+          <div class="item2">
+            <label for="answer">あなたの答え</label>
+            <textarea name="answer" class="form-control"></textarea>
+            <!-- <input name="post_id" type="hidden" > -->
+            <textarea name="post_id" class="hidden" style="display:none"><%= @post_id %></textarea>
+          </div>
+
 
         </div><!--form-group-->
-        <button type="submit" class="btn btn-primary">答える</button>
+        <button type="submit" class="square_btn">答える</button>
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12 p-5">
-    <h1 class="text-center text-primary">みんなの答え</h1>
-      <table class="table table-striped">
-        <thead>
-            <tr>
-                <th style="width:200px;">ユーザー</th>
-                <th style="width:200px;">答え</th>
-            </tr>
-        </thead>
-      </table>
+      <div class="step3">
+        <h1>みんなの答え</h1>
+      </div>
+      <div class="midashi">
+        <h1>ユーザー</h1>
+        <h1>答え</h1>
+      </div>
+      <div class="answers">
         <% def comment %>
               <% if @comments != nil %>
                 <% @comments.each do |comment| %>
-                  <table class="table table-striped"　style="table-layout:fixed;">
-                    <tbody>
-                      <tr>
-                        <th style="width:200px;"><%= comment.user %></th>
-                        <td style="width:200px;"><%= comment.answer %></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                          <div class="balloon5">
+                            <div class="faceicon">
+                             <%= comment.user %>
+                            </div>
+                            <div class="chatting">
+                              <div class="says">
+                                <p><%= comment.answer %></p>
+                              </div>
+                            </div>
+                          </div>
                   <% end %>
                 <% else %>
                 <h3>まだコメントがありません</h3>
               <% end %>
           <% end %>
         <% comment %>
-  </div>
-  </div>
-</div>
+      </div>
+
+        <div class="col-md-12 ">
+          <%= link_to "TOPに戻る", root_path, class:"square_btn my-5" %>
+        </div>

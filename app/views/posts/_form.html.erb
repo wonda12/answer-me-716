@@ -1,5 +1,5 @@
+<div class="howto">
 
-<h2 class="my-5">Step 1</h2>
 <!-- model:postの解説 -->
 <!-- post = @post、　またpostがnilのときはcreateアクションに、そうでないときはeditアクションに勝手に推測して飛ばす -->
 <%= form_with(model: post, local: true) do |form| %>
@@ -14,26 +14,26 @@
     </div>
   <% end %>
 
-
-  <div class="form-group my-5">
-    <p>背景画像選択</p>
+  <div class="step1">
+    <h1>Step1 背景画像選択</h1>
     <!-- 背景画像はラジオボタンで選択形式 -->
-    <label><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '100' %></label>
-    <label><%= form.radio_button :kind, "red" %><%= image_tag 'red.jpg', width: '100' %></label>
+    <div class="img">
+        <label><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '200' %></label>
+        <label><%= form.radio_button :kind, "red" %><%= image_tag 'red.jpg', width: '200' %></label>
+    </div>
   </div>
 
-  <div>
-    <h2 class="mt-5">Step 2</h2>
-  </div>
 
-  <div class="form-group">
-    <p>画像内の文字入力</p>
-    <%= form.text_area :content, class:'form-control mb-5', rows:"3" %>
+  <div class="step2">
+    <h1>Step2 画像内の文字入力</h1>
+    <%= form.text_area :content, size: "100x10", class:'form-control', rows:"3" %>
   </div>
 
   <div class="actions">
-    <%= form.submit "画像を確認する（まだツイートされません）", id: 'submit', class:"square_btn my-5" %>
+    <%= form.submit "画像を確認する（まだツイートされません）", id: 'submit', class:"square_btn" %>
   </div>
 
 
 <% end %>
+
+</div>

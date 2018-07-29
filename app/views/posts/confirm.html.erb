@@ -1,17 +1,23 @@
-<h2>生成された画像の確認</h2>
-<div>
-  <!-- 生成した画像の確認用の画像の表示 -->
-  <%= image_tag @post.picture, width: '315' %>
+<header>
+  <div class="logo"><%= image_tag "logo.png", :class => "logo_img" %></div>
+</header>
+
+<div class="step3">
+  <h1>Step3 生成された画像の確認</h1>
+  <!-- Twitter投稿へのリンク。「url」以下がTwitter本文に記載されるURL、「hashtags」以下がハッシュタグ -->
 </div>
+<div class="confirm_img">
+  <!-- 生成した画像の確認用の画像の表示 -->
+  <%= image_tag @post.picture, width: '600' %>
+</div>
+<!-- <a href="https://twitter.com/share?url=https://answer-me-716.herokuapp.com/posts/<%= @post.id %>&hashtags=Answer.me"  target="_blank" class="square_btn" data-show-count="false">Twitter投稿へ</a> -->
 
-<h2>Step 3</h2>
-<!-- Twitter投稿へのリンク。「url」以下がTwitter本文に記載されるURL、「hashtags」以下がハッシュタグ -->
-<a href="https://twitter.com/share?url=https://answer-me-716.herokuapp.com/posts/<%= @post.id %>&hashtags=Answer.me"  target="_blank" class="square_btn" data-show-count="false">Twitter投稿へ</a>
-<!-- <a href="https://twitter.com/share" data-url="https://answer-me-716.herokuapp.com/posts/<%= @post.id %>&hashtags=Answer.me" data-text="https://answer-me-716.herokuapp.com/answer/<%= @post_id %>" target="_blank" class="square_btn" data-show-count="false">Twitter投稿へ</a> -->
-
+<a href="https://twitter.com/share?url=https://answer-me-716.herokuapp.com/posts/<%= @post.id %>&hashtags=Answer.me"  target="_blank" class="square_btn" data-show-count="false">
+  この画像をTwitterに投稿する
+</a>
 
 <div>
-  <%= link_to "画像編集へ戻る", edit_post_path(@post) %>
+  <%= link_to "画像編集へ戻る",  edit_post_path(@post) %>
 </div>
 <div>
   <%= link_to "トップページへ", root_path %>
