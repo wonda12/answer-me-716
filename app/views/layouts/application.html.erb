@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- 追記③ Twitterカード設定 -->
+    <!-- ApplicationHelperからget_twitter_card_infoメソッドを呼び出している -->
     <!-- if @postがtrueなら@postをelseならnilを入れる　↓ -->
     <% twitter_card = get_twitter_card_info(@post ? @post : nil) %>
     <meta name="twitter:card" content=<%=twitter_card[:card]%> />
@@ -24,6 +25,7 @@
   <body>
     <!-- 追記② 余白作成 -->
     <div class="container">
+
       <%= yield %>
     </div>
   </body>
