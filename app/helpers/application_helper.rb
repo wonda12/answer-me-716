@@ -7,12 +7,13 @@ module ApplicationHelper
         twitter_card[:url] = "https://answer-me-716.herokuapp.com/answer/#{post.id}"
         twitter_card[:image] = "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/#{post.id}.png"
       else
-        twitter_card[:url] = 'https://answer-me-716.herokuapp.com/'
-        twitter_card[:image] = "https://raw.githubusercontent.com/wonda12/answer-me-716/master/app/assets/images/top.png"
+        twitter_card[:url] = 'https://answer-me-716.herokuapp.com/answer/#{post.id}'
+        # twitter_card[:url] = 'https://answer-me-716.herokuapp.com/'
+        twitter_card[:image] = "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/#{post.id}.png"
       end
     else
-      twitter_card[:url] = 'https://answer-me-716.herokuapp.com/'
-      twitter_card[:image] = "https://raw.githubusercontent.com/wonda12/answer-me-716/master/app/assets/images/top.png"
+      twitter_card[:url] = 'https://answer-me-716.herokuapp.com/answer/#{post.id}'
+      twitter_card[:image] = "https://s3-ap-northeast-1.amazonaws.com/answer-me-716-production/images/#{post.id}.png"
       # twitter_card[:image] = "https://raw.githubusercontent.com/wonda12/answer-me-716/master/app/assets/images/top.png"
 
     end
