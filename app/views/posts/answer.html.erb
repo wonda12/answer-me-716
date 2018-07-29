@@ -31,11 +31,14 @@
       </thead>
 
       <tbody>
+        <% if %>
         <% @comments.each do |comment| %>
           <tr>
               <th><%= comment.user %></th>
               <td><%= comment.answer %></td>
           </tr>
+          <% else %>
+          <h3>まだコメントがありません</h3>
         <% end %>
       </tbody>
     </table><br>
