@@ -22,23 +22,31 @@
   <div class="row">
     <div class="col-md-12 p-5">
     <h1 class="text-center text-primary">みんなの答え</h1>
-    <table class="table table-striped">
-      <thead>
-          <tr>
-              <th>ユーザー</th>
-              <th>答え</th>
-          </tr>
-      </thead>
-
-      <tbody>
-        <% @comments.each do |comment| %>
-          <tr>
-              <th><%= comment.user %></th>
-              <td><%= comment.answer %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table><br>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:200px;">ユーザー</th>
+                <th style="width:200px;">答え</th>
+            </tr>
+        </thead>
+      </table>
+        <% def comment %>
+              <% if @comments != nil %>
+                <% @comments.each do |comment| %>
+                  <table class="table table-striped"　style="table-layout:fixed;">
+                    <tbody>
+                      <tr>
+                        <th style="width:200px;"><%= comment.user %></th>
+                        <td style="width:200px;"><%= comment.answer %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <% end %>
+                <% else %>
+                <h3>まだコメントがありません</h3>
+              <% end %>
+          <% end %>
+        <% comment %>
   </div>
   </div>
 </div>
