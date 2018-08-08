@@ -5,6 +5,10 @@ $pink: hsl(335, 52%, 64%);
 $usupink: hsla(334, 72%, 71%, 0.63);
 $blue: hsl(190, 74%, 60%);
 $gray: rgb(237, 238, 238);
+$back-blue: rgb(142, 218, 229);
+
+
+
 
 @media screen and (min-width: 800px) {
    /* 表示領域が800px以上の場合に適用するスタイル */
@@ -18,38 +22,46 @@ $gray: rgb(237, 238, 238);
 
 body {
   text-align: center;
-  background-color: white;
+  background-image: url("background.png") ;
+  background-size: cover;
+  margin: 0;
   // text-align: center;
   h1, h2, h3, p, label{
     color: gray;
   }
 }
 
-header{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 45px;
-  box-shadow: 0 -0.1rem 0 0 rgba(0,0,0,0.1) inset;
-  .logo_img{
-    padding: 0 10px;
-    height: 30px;
-  }
-}
 
 
 // TOPページ
 .cover{
   width:100%;
+  padding-bottom: 150px;
 }
+
+.contents{
+  display: flex;
+  justify-content: center;
+}
+
+.about_answer {
+  padding-bottom: 200px;
+  width: 60%;
+  height: 60%;
+}
+
+.how_to_answer{
+  width: 60%;
+  height: 60%;
+}
+
 
 .feature{
 
   text-align: center;
   h1{
-    color:white;
-    background-color: $usupink;
+    color:skyblue;
+    background-color: white;
     max-width: 100%;
   }
   ol{
@@ -78,7 +90,7 @@ header{
 
 .step1, .step2, .step3{
   @extend .feature;
-  padding-top: 0px;
+  padding-top: 250px;
   padding-bottom: 30px;
   .img{
     display: flex;
@@ -86,7 +98,7 @@ header{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    padding-top: 100px;
+    padding-top: 200px;
   }
   .form-control{
     margin-top: 50px;
