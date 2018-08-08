@@ -12,12 +12,6 @@ $back-blue: rgb(142, 218, 229);
 
 @media screen and (min-width: 800px) {
    /* 表示領域が800px以上の場合に適用するスタイル */
-   .feature ol{
-     display: flex;
-     flex-direction: column;
-     margin: auto;
-     max-width: 75%;
-   }
 }
 
 body {
@@ -36,7 +30,7 @@ body {
 // TOPページ
 .cover{
   width:100%;
-  padding-bottom: 150px;
+  padding-bottom: 10%;
 }
 
 .contents{
@@ -45,7 +39,7 @@ body {
 }
 
 .about_answer {
-  padding-bottom: 200px;
+  padding-bottom: 10%;
   width: 60%;
   height: 60%;
 }
@@ -90,18 +84,20 @@ body {
 
 .step1, .step2, .step3{
   @extend .feature;
-  padding-top: 250px;
-  padding-bottom: 30px;
+  padding-top: 10%;
   .img{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-    padding-top: 200px;
+    justify-content: center;
+    padding-top: 5%;
+    label{
+      padding:0 15%;
+    }
   }
   .form-control{
-    margin-top: 50px;
+    margin-top: 10%;
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
@@ -110,6 +106,11 @@ body {
     border: solid 3px $gray;/*線*/
     border-radius: 10px;/*角の丸み*/
   }
+}
+
+footer{
+  background-color: rgb(98, 98, 98);
+  padding: 5% 0;
 }
 
 .actions{
