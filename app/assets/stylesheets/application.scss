@@ -22,7 +22,7 @@ $back-blue: rgb(142, 218, 229);
 
 body {
   text-align: center;
-  background: image-url('background.png')
+  background: url(/images/background.png);
   background-size: cover;
   margin: 0;
   // text-align: center;
