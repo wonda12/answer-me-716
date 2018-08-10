@@ -1,9 +1,6 @@
-<header>
-  <div class="logo"><%= image_tag "logo.png", :class => "logo_img" %></div>
-</header>
+
 <div class="step3">
-  <h1>答える画面</h1>
-  <p>渡された@post_idの値:<%= @post_id %></p>
+  <h1 class="title">答える画面</h1>
 </div>
 
   <% if @comment.present? %>
@@ -13,56 +10,64 @@
   <% end %>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="reply">
       <%= form_tag("/posts/comment") do %>
       <form>
         <div class="form-group">
-          <div class="item1">
+          <!-- <div class="item1">
             <label for="user">ユーザー名</label>
             <input name="user" class="form-control">
-          </div>
+          </div> -->
           <div class="item2">
-            <label for="answer">あなたの答え</label>
-            <textarea name="answer" class="form-control"></textarea>
+            <label for="answer"></label>
+            <textarea name="answer" class="box2" rows="5"></textarea>
             <!-- <input name="post_id" type="hidden" > -->
             <textarea name="post_id" class="hidden" style="display:none"><%= @post_id %></textarea>
           </div>
-
-
         </div><!--form-group-->
         <button type="submit" class="square_btn">答える</button>
       <% end %>
     </div>
   </div>
-      <div class="step3">
-        <h1>みんなの答え</h1>
-      </div>
-      <div class="midashi">
-        <h1>ユーザー</h1>
-        <h1>答え</h1>
-      </div>
+
+
+  <div class="step3">
+    <h1 class="title">みんなの答え</h1>
+  </div>
+    <div class="answers-box">
       <div class="answers">
         <% def comment %>
                <% if @comments != nil %>
                 <% @comments.each do |comment| %>
                   <div class="balloon5">
-                    <div class="faceicon">
-                     <%= comment.user %>
-                    </div>
                       <div class="chatting">
-                        <div class="says">
+                        <div class="answer">
                           <p><%= comment.answer %></p>
                         </div>
                       </div>
                     </div>
                   <% end %>
                 <% else %>
-                <h3>まだコメントがありません</h3>
+                <h3 class="title">まだコメントがありません</h3>
               <% end %>
           <% end %>
         <% comment %>
       </div>
+    </div>
 
-        <div class="col-md-12 ">
+
+
+        <div class="end">
           <%= link_to "TOPに戻る", root_path, class:"square_btn my-5" %>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+  <script>
+    bubbly({
+    colorStart: '#fff4e6',
+    colorStop: '#ffe9e4',
+    blur:1,
+    compose: 'source-over',
+    bubbleFunc:() => `hsla(${Math.random() * 50}, 100%, 50%, .3)`
+    });
+  </script>

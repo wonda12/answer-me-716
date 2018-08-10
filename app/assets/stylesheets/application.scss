@@ -9,6 +9,18 @@ $back-blue: rgb(142, 218, 229);
 
 
 
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+	font-family: 'Noto Sans Japanese', sans-serif;
+  .w100 {font-weight: 100;}
+  .w200 {font-weight: 200;}
+  .w300 {font-weight: 300;}
+  .w400 {font-weight: 400;}
+  .w500 {font-weight: 500;}
+  .w700 {font-weight: 700;}
+  .w900 {font-weight: 900;}
+}
+
 
 @media screen and (min-width: 800px) {
    /* 表示領域が800px以上の場合に適用するスタイル */
@@ -20,17 +32,56 @@ body {
   background-size: cover;
   margin: 0;
   // text-align: center;
-  h1, h2, h3, p, label{
-    color: gray;
+  h1, h2, h3, label{
+    color: white;
   }
 }
 
+// JS
+#animation, #animation2, #animation3, #animation4 {
+margin: 50px 0;
+font-weight: bold;
+color: #ff0000;
+}
 
+.fadeInDown {
+ -webkit-animation-fill-mode:both;
+ -ms-animation-fill-mode:both;
+ animation-fill-mode:both;
+ -webkit-animation-duration:1s;
+ -ms-animation-duration:1s;
+ animation-duration:1s;
+ -webkit-animation-name: fadeInDown;
+ animation-name: fadeInDown;
+ visibility: visible !important;
+}
+@-webkit-keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}
 
 // TOPページ
+img{
+  vertical-align:bottom;
+}
+
+#bar{
+  width:100%;
+  height: 10%;
+  background-color: black;
+  opacity: 0.1;
+  color: white;
+  margin-top: 0;
+}
+
 .cover{
   width:100%;
-  padding-bottom: 10%;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .contents{
@@ -54,8 +105,7 @@ body {
 
   text-align: center;
   h1{
-    color:skyblue;
-    background-color: white;
+
     max-width: 100%;
   }
   ol{
@@ -84,7 +134,13 @@ body {
 
 .step1, .step2, .step3{
   @extend .feature;
-  padding-top: 10%;
+  .text-bar{
+    background-color: $blue;
+    color:white;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
   .img{
     display: flex;
     flex-direction: row;
@@ -107,6 +163,18 @@ body {
     border-radius: 10px;/*角の丸み*/
   }
 }
+.box2 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: $blue;/*文字色*/
+    background: #FFF;
+    border: solid 3px $blue;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    resize: none;
+    width:50%;
+    height:40%;
+}
 
 footer{
   background-color: rgb(98, 98, 98);
@@ -121,11 +189,33 @@ footer{
 .confirm_img{
   padding-bottom: 50px;
 }
+.title{
+  color: $blue;
+  padding: 0.5em;/*文字周りの余白*/
+  background: white;/*背景色*/
+  border-left: solid 5px $blue;/*左線（実線 太さ 色）*/
+}
+
+.confirm_end{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
 
 
-//答える画面
+
+//answer.html
+.row{
+  margin-bottom: 10%;
+}
+.answer{
+  padding: 0.5em;/*文字周りの余白*/
+  background: white;/*背景色*/
+  border-top: solid 1px rgb(241, 241, 241);/*左線（実線 太さ 色）*/
+}
+
 .answer_img{
   width: 80%;
+  margin-bottom: 3%;
 }
 
 .form-group{
@@ -133,20 +223,6 @@ footer{
   flex-direction: column;
 }
 
-table {
-  width:90%;
-  border-top:1px solid $gray;
-  border-right:1px solid $gray;
-  margin:1em auto;
-  border-collapse:separate;
-}
-
-td {
-  color:#678197;
-  border-left:1px solid #e5eff8;
-  padding:0em 1em;
-  text-align:center;
-}
 
 .midashi{
   display: flex;
@@ -154,77 +230,33 @@ td {
   justify-content: space-around;
 }
 
-
-// チャット吹き出し
-.answers{
-  max-width: 80%;
-  padding: 50px 200px;
+.answers-box{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
+  background-color: white;
+  color: gray;
+  width: 80%;
+  margin: auto;
+  border: solid 1px #e5eff8;
 }
 
-.balloon5 {
-    width: 100%;
-    margin: 1.5em 0;
-    overflow: hidden;
+.end{
+  margin-bottom: 10%;
 }
 
-.balloon5 .faceicon {
-    float: left;
-    margin-right: -90px;
-    padding: 30px;
-    border: solid 3px #d7ebfe;
-    border-radius: 50%;
-}
-
-.balloon5 .faceicon img{
-    width: 100%;
-    height: auto;
-
-}
-
-.balloon5 .chatting {
-    width: 100%;
-}
-
-.says {
-    display: inline-block;
-    position: relative;
-    margin: 5px 0 0 105px;
-    padding: 17px 13px;
-    border-radius: 12px;
-    background: #d7ebfe;
-}
-
-.says:after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 18px;
-    left: -24px;
-    border: 12px solid transparent;
-    border-right: 12px solid #d7ebfe;
-}
-
-.says p {
-    margin: 0;
-    padding: 0;
-}
-
-// ボタン類
-
+// ボタン
 .square_btn {
     display: inline-block;
     padding: 1.3em 1em;
     text-decoration: none;
-    color: $pink;
-    border: solid 2px $pink;
+    color: $blue;
+    border: solid 2px $blue;
     border-radius: 3px;
     transition: .4s;
 }
 .square_btn:hover {
-    background: $pink;
+    background: $blue;
     color: white;
 }
 

@@ -16,8 +16,10 @@
 
 
 
-  <div class="step1">
-    <h1>Step1  背景画像選択</h1>
+  <div class="step1", id="animation3">
+    <div class="text-bar">
+      <h1>フレーム選択</h1>
+    </div>
     <!-- 背景画像はラジオボタンで選択形式 -->
     <div class="img">
         <label><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '200' %></label>
@@ -26,12 +28,14 @@
   </div>
 
 
-  <div class="step2">
-    <h1>Step2 画像内の文字入力</h1>
+  <div class="step2", id="animation4">
+    <div class="text-bar">
+      <h1>メッセージ入力</h1>
+    </div>
     <%= form.text_area :content, size: "50x10", class:'form-control', rows:"3" %>
   </div>
 
-  <div class="actions">
+  <div class="actions", id="animation4">
     <%= form.submit "画像を確認する（まだツイートされません）", id: 'submit', class:"square_btn" %>
   </div>
 
@@ -39,6 +43,32 @@
 <% end %>
 </div>
 
+
 <footer>
-  
 </footer>
+
+<script type="text/javascript">
+$('#animation3').css('visibility','hidden');
+$(window).scroll(function(){
+ var windowHeight = $(window).height(),
+     topWindow = $(window).scrollTop();
+ $('#animation3').each(function(){
+  var targetPosition = $(this).offset().top;
+  if(topWindow > targetPosition - windowHeight + 100){
+   $(this).addClass("fadeInDown");
+  }
+ });
+});
+
+$('#animation4').css('visibility','hidden');
+$(window).scroll(function(){
+ var windowHeight = $(window).height(),
+     topWindow = $(window).scrollTop();
+ $('#animation4').each(function(){
+  var targetPosition = $(this).offset().top;
+  if(topWindow > targetPosition - windowHeight + 100){
+   $(this).addClass("fadeInDown");
+  }
+ });
+});
+</script>
