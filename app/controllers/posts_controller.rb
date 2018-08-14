@@ -138,11 +138,11 @@ class PostsController < ApplicationController
       pointsize = 45
     end
     # ⑨-5 文字色の指定
-    color = "white"
+    color = "gray"
     # ⑨-6 文字を入れる場所の調整（0,0を変えると文字の位置が変わります）
     draw = "text 0,0 '#{sentense}'"
     # ⑨-7 フォントの指定
-    font = ".fonts/GenEiGothicN-U-KL.otf"
+    font = ".fonts/logotypejp_mp_b.ttf"
     # ⑨-8 ↑これらの項目も文字サイズのように背景画像や文字数によって変えることができます
     # ⑨-9 選択された背景画像の設定
     case @post.kind
