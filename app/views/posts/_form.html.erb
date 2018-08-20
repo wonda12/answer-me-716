@@ -15,15 +15,15 @@
   <% end %>
 
 
-
+<div class="steps">
   <div class="step1", id="animation3">
     <div class="text-bar">
       <h1>フレーム選択</h1>
     </div>
     <!-- 背景画像はラジオボタンで選択形式 -->
     <div class="img">
-        <label><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '200' %></label>
-        <label><%= form.radio_button :kind, "red" %><%= image_tag 'red.jpg', width: '200' %></label>
+        <label class="frame"><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '80%'%></label>
+        <label class="frame"><%= form.radio_button :kind, "red" %><%= image_tag 'red.jpg', width: '80%'%></label>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
   <div class="actions", id="animation4">
     <%= form.submit "画像を確認する（まだツイートされません）", id: 'submit', class:"square_btn" %>
   </div>
-
+</div>
 
 <% end %>
 </div>

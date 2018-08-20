@@ -29,12 +29,19 @@ body {
 body {
   text-align: center;
   background: url(/images/background.png);
-  background-size: cover;
+	background-color: white;
+	background-size: cover;
   margin: 0;
   // text-align: center;
+	h1{
+		font-size: 40px;
+	}
   h1, h2, h3, label{
     color: white;
   }
+	p{
+		font-size: 16px;
+	}
 }
 
 // JS
@@ -65,6 +72,10 @@ color: #ff0000;
 }
 
 // TOPページ
+
+.introduce{
+
+}
 img{
   vertical-align:bottom;
 }
@@ -72,10 +83,12 @@ img{
 #bar{
   width:100%;
   height: 10%;
-  background-color: black;
-  opacity: 0.1;
+  background-color: $blue;
+  opacity: 0.9;
   color: white;
   margin-top: 0;
+	font-size: 20px;
+	text-align: right;
 }
 
 .cover{
@@ -100,6 +113,9 @@ img{
   height: 60%;
 }
 
+.frame{
+	margin-bottom: 1%;
+}
 
 .feature{
 
@@ -138,7 +154,7 @@ img{
     background-color: $blue;
     color:white;
     font-size: 10px;
-    opacity: 0.6;
+    opacity: 0.9;
   }
 
   .img{
@@ -178,7 +194,7 @@ img{
 
 footer{
   background-color: rgb(98, 98, 98);
-  padding: 5% 0;
+  padding: 2% 0;
 }
 
 .actions{
@@ -256,6 +272,8 @@ footer{
     border: solid 2px $blue;
     border-radius: 3px;
     transition: .4s;
+		background-color: white;
+		font-size: 20px;
 }
 .square_btn:hover {
     background: $blue;
@@ -293,3 +311,15 @@ footer{
 .fl_tw .twicon .fa {
   line-height: 50px;
 }
+
+// プライバシーポリシー
+.privacy-policy{
+	p{
+		color:black;
+		font-size: 16px;
+	}
+}
+ .privacy{
+	 font-size: 30px;
+	 color: $pink;
+ }
