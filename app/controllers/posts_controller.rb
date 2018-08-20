@@ -4,6 +4,9 @@ class PostsController < ApplicationController
   # ②追加
   before_action :new_post, only: [:show, :new]
 
+  def privacy
+  end
+  
   # ③showアクション修正
   #もともとはレンダーはなし
   def show
