@@ -17,14 +17,14 @@
 
       gtag('config', 'UA-123149118-1');
     </script>
-    
+
 
     <!-- 追記① モバイル端末表示対応 -->
     <meta name="viewport" content="width=device-width">
 
     <!-- 追記③ Twitterカード設定 -->
     <!-- ApplicationHelperからget_twitter_card_infoメソッドを呼び出している -->
-    <!-- if @postがtrueなら@postをelseならnilを入れる　↓ -->
+    <!-- if @postがtrueなら@postをelseならnilを入れる ↓ -->
     <% twitter_card = get_twitter_card_info(@post ? @post : nil) %>
     <meta name="twitter:card" content=<%=twitter_card[:card]%> />
     <meta property="og:url" content=<%=twitter_card[:url]%> />
