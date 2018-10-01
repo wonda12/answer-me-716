@@ -30,6 +30,10 @@ body {
   img{
 		width: 80%;
 	}
+	.answer_img{
+	  width: 80%;
+	  margin-bottom: 3%;
+	}
 	.square_btn{
 		width:60%;
 		height: 60%;
@@ -39,7 +43,7 @@ body {
 
 body {
   text-align: center;
-	background-color: #ea8c00;
+	background-color: #fbaa31;
 	background-size: cover;
   margin: 0;
   // text-align: center;
@@ -99,7 +103,7 @@ img{
 	padding-top: 10%;
 }
 
-.form-control{
+.form-control {
 	border:0;
 	padding:10px;
 	font-size:1.3em;
@@ -126,7 +130,7 @@ border-radius: 5px;
 
 //confirmページ
 .confirm{
-	background-color: #ea8c00;
+	background-color: #fbaa31;
 	padding: 5%;
 }
 .confirm_img{
@@ -134,6 +138,16 @@ border-radius: 5px;
 }
 .confirm_end{
 	padding-top: 10%;
+}
+
+.confirm_img{
+	padding-top: 3%;
+	width:80%;
+	margin: auto;
+}
+
+.bar{
+	background-color: #ea8c00;
 }
 
 //answer.html
@@ -147,8 +161,22 @@ border-radius: 5px;
 }
 
 .answer_img{
-  width: 80%;
+  width: 60%;
   margin-bottom: 3%;
+}
+
+.box2{
+	border:0;
+	padding:10px;
+	font-size:1.3em;
+	font-family:Arial, sans-serif;
+	color:#aaa;
+	border:solid 1px #ccc;
+	margin:0 0 20px;
+	width:50%;
+	-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
 }
 
 .form-group{
@@ -169,7 +197,7 @@ border-radius: 5px;
   justify-content: center;
   background-color: white;
   color: gray;
-  width: 80%;
+  width: 70%;
   margin: auto;
   border: solid 1px #e5eff8;
 }
