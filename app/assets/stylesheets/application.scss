@@ -28,7 +28,6 @@ body {
 
 body {
   text-align: center;
-  background: url(/images/background.png);
 	background-color: white;
 	background-size: cover;
   margin: 0;
@@ -38,15 +37,17 @@ body {
 	}
   h1, h2, h3, label{
     color: white;
+		margin: 0;
   }
 	p{
 		font-size: 16px;
+		margin: 0;
 	}
 }
 
 // JS
 #animation, #animation2, #animation3, #animation4 {
-margin: 50px 0;
+margin: 0;
 font-weight: bold;
 color: #ff0000;
 }
@@ -73,150 +74,29 @@ color: #ff0000;
 
 // TOPページ
 
-.introduce{
-
-}
 img{
   vertical-align:bottom;
 }
 
-#bar{
-  width:100%;
-  height: 10%;
-  background-color: $blue;
-  opacity: 0.9;
-  color: white;
-  margin-top: 0;
-	font-size: 20px;
-	text-align: right;
-}
-
 .cover{
-  width:100%;
-  padding-bottom: 0;
-  margin-bottom: 0;
+	width: 100%;
 }
 
-.contents{
-  display: flex;
-  justify-content: center;
+.block {
+	width: 100%;
+	padding-bottom: 10%;
+	padding-top: 10%;
 }
 
-.about_answer {
-  padding-bottom: 10%;
-  width: 60%;
-  height: 60%;
+//背景色
+.bg-yellow {
+	background-color: #fff2c1;
 }
-
-.how_to_answer{
-  width: 60%;
-  height: 60%;
+.bg-orange {
+	background-color: #fbaa31;
 }
-
-.frame{
-	margin-bottom: 1%;
-}
-
-.feature{
-
-  text-align: center;
-  h1{
-
-    max-width: 100%;
-  }
-  ol{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-
-    color:gray;
-    list-style: none;
-    padding-top: 50px;
-    padding-bottom: 100px;
-  }
-  li{
-    border: 2px $blue solid;
-    border-radius: 2%;
-    padding: 100px;
-    margin-bottom: 5px;
-  }
-}
-
-.howto{
-
-}
-
-.step1, .step2, .step3{
-  @extend .feature;
-  .text-bar{
-    background-color: $blue;
-    color:white;
-    font-size: 10px;
-    opacity: 0.9;
-  }
-
-  .img{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5%;
-    label{
-      padding:0 15%;
-    }
-  }
-  .form-control{
-    margin-top: 10%;
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    color: #6091d3;/*文字色*/
-    background: #FFF;
-    border: solid 3px $gray;/*線*/
-    border-radius: 10px;/*角の丸み*/
-  }
-}
-.box2 {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    color: $blue;/*文字色*/
-    background: #FFF;
-    border: solid 3px $blue;/*線*/
-    border-radius: 10px;/*角の丸み*/
-    resize: none;
-    width:50%;
-    height:40%;
-}
-
-footer{
-  background-color: rgb(98, 98, 98);
-  padding: 2% 0;
-}
-
-.actions{
-  padding-bottom: 100px;
-}
-
-//confirmページ
-.confirm_img{
-  padding-bottom: 50px;
-}
-.title{
-  margin-left: 10%;
-  margin-right: 10%;
-  color: $blue;
-  padding: 0.5em;/*文字周りの余白*/
-  background: white;/*背景色*/
-  border-left: solid 5px $blue;/*左線（実線 太さ 色）*/
-}
-
-.confirm_end{
-  margin-top: 10%;
-  margin-bottom: 5%;
+.bg-deep-orange {
+	background-color: #ea8c00;
 }
 
 

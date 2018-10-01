@@ -1,7 +1,5 @@
-<div class="howto">
-
 <!-- model:postの解説 -->
-<!-- post = @post、　またpostがnilのときはcreateアクションに、そうでないときはeditアクションに勝手に推測して飛ばす -->
+<!-- post = @post、またpostがnilのときはcreateアクションに、そうでないときはeditアクションに勝手に推測して飛ばす -->
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -14,30 +12,39 @@
     </div>
   <% end %>
 
+<div class="block bg-orange">
+     <p style="color: white;", id="animation">知りたいことがあるけど知恵袋に投稿するほどじゃない <br>
+     フォロワーのみんなに聞いてみたいことがある <br>
+     そんな人のためにAnswer.meは生まれました <br>
+     ログイン不要で使えるのでまずは試してみましょう</p>
+</div>
 
-<div class="steps">
-  <div class="step1", id="animation3">
-    <div class="text-bar">
-      <h1>フレーム選択</h1>
-    </div>
-    <!-- 背景画像はラジオボタンで選択形式 -->
-    <div class="img">
-        <label class="frame"><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '80%'%></label>
-        <label class="frame"><%= form.radio_button :kind, "red" %><%= image_tag 'red.jpg', width: '80%'%></label>
-    </div>
+<div class="block bg-yellow">
+  <h2 id="animation2">面倒な登録不要！簡単3STEP</h2>
+  <%= image_tag "3step.png"%>
+</div>
+
+<div class="block bg-orange"">
+  <div class="text-bar, id="animation3"">
+    <h2>まずはフレームを選びましょう</h1>
   </div>
-
-
-  <div class="step2", id="animation4">
-    <div class="text-bar">
-      <h1>メッセージ入力</h1>
-    </div>
-    <%= form.text_area :content, size: "50x10", class:'form-control', rows:"3" %>
+  <!-- 背景画像はラジオボタンで選択形式 -->
+  <div class="img">
+    <label class="frame"><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '80%'%></label>
+    <label class="frame"><%= form.radio_button :kind, "red" %><%= image_tag 'red.jpg', width: '80%'%></label>
   </div>
+</div>
 
-  <div class="actions", id="animation4">
-    <%= form.submit "画像を確認する（まだツイートされません）", id: 'submit', class:"square_btn" %>
+
+<div class="block bg-deep-orange">
+  <div class="text-bar", id="animation4">
+    <h2>質問を入力してください</h1>
   </div>
+  <%= form.text_area :content, size: "50x10", class:'form-control', rows:"3" %>
+</div>
+
+<div class="block bg-yellow", id="animation4">
+  <%= form.submit "画像を確認する（まだツイートされません）", id: 'submit', class:"square_btn" %>
 </div>
 
 <% end %>
