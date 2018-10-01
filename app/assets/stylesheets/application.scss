@@ -26,9 +26,20 @@ body {
    /* 表示領域が800px以上の場合に適用するスタイル */
 }
 
+@media screen and (max-width: 600px) {
+  img{
+		width: 80%;
+	}
+	.square_btn{
+		width:60%;
+		height: 60%;
+		font-size: 14px;
+	}
+}
+
 body {
   text-align: center;
-	background-color: white;
+	background-color: #ea8c00;
 	background-size: cover;
   margin: 0;
   // text-align: center;
@@ -88,6 +99,20 @@ img{
 	padding-top: 10%;
 }
 
+.form-control{
+	border:0;
+	padding:10px;
+	font-size:1.3em;
+	font-family:Arial, sans-serif;
+	color:#aaa;
+	border:solid 1px #ccc;
+	margin:0 0 20px;
+	width:50%;
+	-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
 //背景色
 .bg-yellow {
 	background-color: #fff2c1;
@@ -99,7 +124,17 @@ img{
 	background-color: #ea8c00;
 }
 
-
+//confirmページ
+.confirm{
+	background-color: #ea8c00;
+	padding: 5%;
+}
+.confirm_img{
+	padding-bottom: 10%;
+}
+.confirm_end{
+	padding-top: 10%;
+}
 
 //answer.html
 .row{
@@ -148,15 +183,15 @@ img{
     display: inline-block;
     padding: 1.3em 1em;
     text-decoration: none;
-    color: $blue;
-    border: solid 2px $blue;
+    color: #ea8c00;
+    border: solid 2px #ea8c00;
     border-radius: 3px;
     transition: .4s;
 		background-color: white;
 		font-size: 20px;
 }
 .square_btn:hover {
-    background: $blue;
+    background: #ea8c00;
     color: white;
 }
 
@@ -201,5 +236,5 @@ img{
 }
  .privacy{
 	 font-size: 30px;
-	 color: $pink;
+	 color: #ea8c00;
  }

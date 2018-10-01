@@ -21,11 +21,12 @@
 
 <div class="block bg-yellow">
   <h2 id="animation2">面倒な登録不要！簡単3STEP</h2>
-  <%= image_tag "3step.png"%>
+  <%= image_tag ('3step.png')%>
+
 </div>
 
-<div class="block bg-orange"">
-  <div class="text-bar, id="animation3"">
+<div class="block bg-orange">
+  <div class="text-bar", id="animation3">
     <h2>まずはフレームを選びましょう</h1>
   </div>
   <!-- 背景画像はラジオボタンで選択形式 -->
@@ -41,11 +42,11 @@
   <div class="text-bar", id="animation4">
     <h2>質問を入力してください</h2>
   </div>
-  <%= form.text_area :content, size: "50x10", class:'form-control', rows:"3" %>
+  <%= form.text_area :content, size: "110x10", class:'form-control', rows:"3" %>
 </div>
 
 <div class="block bg-yellow", id="animation4">
-  <%= form.submit "画像を確認する（まだツイートされません）", id: 'submit', class:"square_btn" %>
+  <%= form.submit "画像を確認する", id: 'submit', class:"square_btn" %>
 </div>
 
 <% end %>

@@ -1,12 +1,13 @@
 
+<div class="confirm">
 
 <div class="step3">
-  <h1 class="title">投稿する画像の確認</h1>
+  <h2 class="title">投稿する画像の確認</h2>
   <!-- Twitter投稿へのリンク。「url」以下がTwitter本文に記載されるURL、「hashtags」以下がハッシュタグ -->
 </div>
 <div class="confirm_img">
   <!-- 生成した画像の確認用の画像の表示 -->
-  <%= image_tag @post.picture, width: '80%' %>
+  <%= image_tag @post.picture, width: '90%' %>
 </div>
 
 <a href="https://twitter.com/share?url=http://www.please-answer.me/posts/<%= @post.id %>&hashtags=AnswerMe"  target="_blank" class="square_btn" data-show-count="false">
@@ -20,4 +21,6 @@
   <div>
     <%= link_to "トップページへ", root_path %>
   </div>
+</div>
+
 </div>
