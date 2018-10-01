@@ -50,3 +50,6 @@ ruby '2.5.1'
 # ⑤Bootstrap
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
+
+# サイトマップ作成
+gem 'sitemap_generator'

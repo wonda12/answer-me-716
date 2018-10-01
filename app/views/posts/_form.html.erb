@@ -13,10 +13,10 @@
   <% end %>
 
 <div class="block bg-orange">
-     <p style="color: white;", id="animation">知りたいことがあるけど知恵袋に投稿するほどじゃない <br>
+     <h2 style="color: white;", id="animation">知りたいことがあるけど知恵袋に投稿するほどじゃない <br>
      フォロワーのみんなに聞いてみたいことがある <br>
      そんな人のためにAnswer.meは生まれました <br>
-     ログイン不要で使えるのでまずは試してみましょう</p>
+     ログイン不要で使えるのでまずは試してみましょう</h2>
 </div>
 
 <div class="block bg-yellow">
@@ -30,15 +30,16 @@
   </div>
   <!-- 背景画像はラジオボタンで選択形式 -->
   <div class="img">
-    <label class="frame"><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '80%'%></label>
-    <label class="frame"><%= form.radio_button :kind, "red" %><%= image_tag 'red.jpg', width: '80%'%></label>
+    <label class="frame"><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '50%'%></label>
+    <br><br>
+    <label class="frame"><%= form.radio_button :kind, "red" %><%= image_tag 'red.jpg', width: '50%'%></label>
   </div>
 </div>
 
 
 <div class="block bg-deep-orange">
   <div class="text-bar", id="animation4">
-    <h2>質問を入力してください</h1>
+    <h2>質問を入力してください</h2>
   </div>
   <%= form.text_area :content, size: "50x10", class:'form-control', rows:"3" %>
 </div>
